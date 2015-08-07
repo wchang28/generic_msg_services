@@ -10,7 +10,7 @@ if (process.argv.length < 3) {
 var config = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 //console.log(JSON.stringify(config));
 
-// initialize message listener
+// initialize the connector
 var p = stompConnector.initialize(config);
 p.on('broker_connected', function (event) {
 	console.log(event.broker_name + ': connected to the msg broker ' + event.broker_url);
